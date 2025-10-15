@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Era Mikroprosesor | Belajar Arsitektur Komputer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Titillium+Web:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="nav-brand">Arsitektur Komputer</a>
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html">Home</a>
+                    <a href="sejarah.html">Sejarah</a>
+                    <a href="mikroprosesor.html">Mikroprosesor</a>
+                    <a href="arsitektur.html">Arsitektur</a>
+                    <a href="interkoneksi.html">Interkoneksi</a> <a href="modern.html">Modern</a>
+                    <a href="latihan.html">Latihan & Kuis</a>
+                </div>
+                <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container content-wrapper">
+            <article class="content-section">
+                <h2>💾 Era Mikroprosesor: Komputer dalam Satu Chip</h2>
+                <p>Penciptaan mikroprosesor adalah titik balik monumental dalam sejarah komputasi. Integrasi seluruh komponen CPU—unit kontrol, ALU, dan register—ke dalam satu kepingan silikon tunggal mengubah komputer dari mesin seukuran ruangan menjadi perangkat yang dapat diletakkan di atas meja. Dimulai dengan <strong>Intel 4004</strong> pada tahun 1971, inovasi ini memicu revolusi komputer pribadi dan memulai perlombaan kinerja yang telah berlangsung selama lebih dari lima dekade.</p>
+
+                <img src="img/intel-4004.jpg" alt="Chip Intel 4004, mikroprosesor pertama di dunia" class="content-image">
+
+                <div class="fun-fact-box">
+                    <h4>💡 Fakta Menarik: Awalnya untuk Kalkulator</h4>
+                    <p>Mikroprosesor pertama di dunia, <strong>Intel 4004</strong>, awalnya tidak dirancang untuk komputer. Intel dikontrak oleh perusahaan Jepang, Busicom, untuk membuat serangkaian chip untuk kalkulator berperforma tinggi. Tim Intel berhasil mengintegrasikan semua logika ke dalam satu chip tunggal, dan lahirlah mikroprosesor yang kemudian mengubah dunia.</p>
+                </div>
+
+                <h3>Evolusi Arsitektur Intel x86 yang Legendaris</h3>
+                <p>Evolusi arsitektur Intel x86 menjadi cerminan dari lintasan Hukum Moore yang sedang beraksi. Tabel berikut menyoroti beberapa lompatan penting:</p>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Prosesor</th>
+                                <th>Tahun</th>
+                                <th>Transistor</th>
+                                <th>Lebar Data</th>
+                                <th>Inovasi Kunci</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>4004</strong></td><td>1971</td><td>2.300</td><td>4-bit</td><td>CPU komersial pertama dalam satu chip.</td></tr>
+                            <tr><td><strong>8086</strong></td><td>1978</td><td>29.000</td><td>16-bit</td><td>Melahirkan arsitektur x86 yang dominan.</td></tr>
+                            <tr><td><strong>80386</strong></td><td>1985</td><td>275.000</td><td>32-bit</td><td>Fondasi OS modern dengan paged virtual memory.</td></tr>
+                            <tr><td><strong>Pentium</strong></td><td>1993</td><td>3,1 juta</td><td>32-bit</td><td>Arsitektur superscalar (eksekusi instruksi paralel).</td></tr>
+                            <tr><td><strong>Pentium Pro</strong></td><td>1995</td><td>5,5 juta</td><td>32-bit</td><td>Memperkenalkan eksekusi spekulatif dan prediksi cabang.</td></tr>
+                            <tr><td><strong>Core 2 Duo</strong></td><td>2006</td><td>167 juta</td><td>64-bit</td><td>Arsitektur multi-core 64-bit pertama yang efisien.</td></tr>
+                            <tr><td><strong>Core i7</strong></td><td>2008</td><td>731 juta+</td><td>64-bit</td><td>Integrasi memory controller & QuickPath Interconnect.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+
+            <article class="content-section">
+                <h2>🚀 Mengejar Kinerja: Mengatasi Bottleneck</h2>
+                <p>Seiring kecepatan prosesor meningkat jauh lebih cepat daripada kecepatan akses memori utama, terciptalah *bottleneck* kinerja yang signifikan. Para arsitek komputer mengembangkan berbagai teknik cerdas untuk menjaga agar prosesor tidak "kelaparan" data dan terus bekerja efisien, bahkan saat kecepatan clock mulai stagnan karena batasan fisik (panas).</p>
+
+                <img src="img/pipelining.png" alt="Diagram konsep pipelining dalam prosesor" class="content-image">
+
+                <ul>
+                    <li><strong>Pipelining:</strong> Memecah eksekusi instruksi menjadi beberapa tahap (seperti mengambil, menerjemahkan, mengeksekusi) dan menjalankannya secara tumpang tindih seperti di jalur perakitan. Ini meningkatkan *throughput* atau jumlah instruksi yang selesai per satuan waktu.</li>
+                    <li><strong>Branch Prediction:</strong> Prosesor secara cerdas menebak jalur mana yang akan diambil dalam sebuah percabangan (misalnya, `if-else`). Dengan mulai mengerjakan instruksi di jalur yang paling mungkin, prosesor menghindari jeda saat menunggu keputusan aktual.</li>
+                    <li><strong>Superscalar Execution:</strong> Mengimplementasikan beberapa unit eksekusi paralel di dalam satu inti. Ini memungkinkan prosesor untuk menjalankan lebih dari satu instruksi dalam satu siklus clock, selama instruksi-instruksi tersebut tidak saling bergantung.</li>
+                    <li><strong>Speculative Execution:</strong> Teknik canggih yang menggabungkan prediksi cabang dan analisis data untuk mengeksekusi instruksi "secara spekulatif" atau sebelum waktunya. Hasilnya disimpan sementara dan akan diterapkan jika tebakan benar, atau dibuang jika salah.</li>
+                </ul>
+            </article>
+        </div>
+    </main>
+    <footer>
+        <div class="container"><p>&copy; 2025 Belajar Arsitektur Komputer.</p></div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arsitektur Modern | Belajar Arsitektur Komputer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Titillium+Web:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="nav-brand">Arsitektur Komputer</a>
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html">Home</a>
+                    <a href="sejarah.html">Sejarah</a>
+                    <a href="mikroprosesor.html">Mikroprosesor</a>
+                    <a href="arsitektur.html">Arsitektur</a>
+                    <a href="interkoneksi.html">Interkoneksi</a> <a href="modern.html">Modern</a>
+                    <a href="latihan.html">Latihan & Kuis</a>
+                </div>
+                <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container content-wrapper">
+            <article class="content-section">
+                <h2>🧱 Paradigma Baru: Arsitektur Multi-Core</h2>
+                <p>Pada pertengahan 2000-an, para insinyur menabrak <strong>"Tembok Daya"</strong> (<em>Power Wall</em>). Meningkatkan kecepatan clock lebih lanjut menghasilkan panas yang berlebihan dan tidak dapat dikelola. Solusinya adalah menempatkan beberapa inti pemrosesan (<em>core</em>) yang lebih efisien pada satu chip.</p>
+                <img src="img/multi-core.jpg" alt="Diagram prosesor multi-core" class="content-image">
+                <p>Pendekatan ini mengubah metrik kinerja dari kecepatan <strong>single-thread</strong> ke <strong>throughput paralel</strong>. Tantangan ini dijelaskan oleh <strong>Hukum Amdahl</strong>, yang menyatakan bahwa percepatan selalu dibatasi oleh bagian program yang tidak dapat diparalelkan.</p>
+                <div class="fun-fact-box">
+                    <h4>💡 Fakta Menarik: Dari CPU ke GPU</h4>
+                    <p>Konsep <em>throughput</em> paralel didorong ke tingkat ekstrem oleh <strong>Graphics Processing Unit (GPU)</strong>. Awalnya untuk merender grafis, arsitektur GPU dengan ribuan inti kecil kini digunakan secara luas untuk komputasi ilmiah dan kecerdasan buatan (AI).</p>
+                </div>
+            </article>
+
+            <article class="content-section">
+                <h2>🚀 Evolusi Sub-sistem Pendukung Kinerja</h2>
+                <h4>Hierarki Memori dan Peran Krusial Cache</h4>
+                <p>Untuk menjembatani kesenjangan kecepatan prosesor-memori, digunakan <strong>cache memory</strong>. Strukturnya berevolusi menjadi hierarki multi-level (L1, L2, L3) yang semakin dekat ke inti, semakin cepat dan kecil ukurannya.</p>
+                <img src="img/cache-hierarchy.png" alt="Diagram hierarki cache L1, L2, L3" class="content-image">
+
+                <div class="sub-section">
+                    <h4>Mekanisme Cache: Studi Kasus Direct Mapping</h4>
+                    <p>Salah satu metode paling dasar untuk menentukan di mana data disimpan dalam cache adalah <strong>Direct Mapping</strong>. Dalam metode ini, setiap blok dari memori utama hanya memiliki <strong>satu kemungkinan lokasi</strong> di dalam cache. Lokasi ini ditentukan oleh beberapa bit tengah dari alamat memori.</p>
+                    <p>Alamat memori dibagi menjadi tiga bagian:</p>
+                    <ul>
+                        <li><strong>Tag:</strong> Bit-bit paling signifikan, digunakan sebagai penanda unik.</li>
+                        <li><strong>Line (atau Index):</strong> Bit-bit tengah, yang secara langsung menentukan di baris (line) mana blok tersebut akan disimpan.</li>
+                        <li><strong>Word (atau Offset):</strong> Bit-bit paling tidak signifikan, untuk memilih data spesifik di dalam blok.</li>
+                    </ul>
+                    <div class="address-format">
+                        <span>Tag</span>
+                        <span>Line / Index</span>
+                        <span>Word / Offset</span>
+                    </div>
+
+                    <h5>Contoh Perhitungan:</h5>
+                    <p>Misalkan sebuah sistem memiliki <strong>main memory 16 KB</strong>, <strong>cache 1 KB</strong>, dan ukuran blok <strong>16 byte</strong>.</p>
+                    <ol>
+                        <li><strong>Total Bit Alamat:</strong> 16 KB = 2<sup>4</sup> &times; 2<sup>10</sup> = 2<sup>14</sup> byte &rarr; Alamat <strong>14 bit</strong>.</li>
+                        <li><strong>Bit Word (Offset):</strong> Ukuran blok 16 byte = 2<sup>4</sup> byte &rarr; <strong>4 bit</strong>.</li>
+                        <li><strong>Jumlah Line di Cache:</strong> Kapasitas Cache / Ukuran Blok = 1 KB / 16 B = 1024 / 16 = 64 line.</li>
+                        <li><strong>Bit Line (Index):</strong> Jumlah line 64 = 2<sup>6</sup> &rarr; <strong>6 bit</strong>.</li>
+                        <li><strong>Bit Tag:</strong> 14 (total) - 6 (line) - 4 (word) = <strong>4 bit</strong>.</li>
+                    </ol>
+                    <p>Maka, format alamat untuk sistem ini adalah: <strong>Tag (4 bit), Line (6 bit), Word (4 bit)</strong>. Untuk menguji pemahaman lebih lanjut, silakan kunjungi halaman <a href="latihan.html">Latihan & Kuis</a>.</p>
+                </div>
+
+                <h4>Interkoneksi Sistem: Dari Bus ke Point-to-Point</h4>
+                <p>Di masa lalu, semua komponen berkomunikasi melalui jalur bersama yang disebut <em>system bus</em>. Seiring meningkatnya kecepatan, bus ini menjadi <em>bottleneck</em>. Arsitektur modern beralih ke skema interkoneksi <em>point-to-point</em> seperti <strong>QuickPath Interconnect (QPI)</strong> dan <strong>PCI Express (PCIe)</strong>.</p>
+            </article>
+
+            <article class="content-section">
+                <h2>🏁 Kesimpulan: Trajektori Evolusi</h2>
+                <p>Perjalanan evolusi arsitektur mikroprosesor adalah kisah inovasi tanpa henti. Lintasan ini dapat diringkas sebagai berikut:</p>
+                <ol>
+                    <li><strong>Fondasi:</strong> Konsep <em>stored-program</em> von Neumann.</li>
+                    <li><strong>Revolusi Material:</strong> Transistor dan IC memulai lintasan Hukum Moore.</li>
+                    <li><strong>Era Mikroprosesor:</strong> Integrasi CPU ke satu chip.</li>
+                    <li><strong>Tembok Kinerja:</strong> Hambatan daya menghentikan perlombaan clock.</li>
+                    <li><strong>Paradigma Paralel:</strong> Arsitektur multi-core menjadi solusi.</li>
+                </ol>
+            </article>
+        </div>
+    </main>
+    <footer>
+        <div class="container"><p>&copy; 2025 Belajar Arsitektur Komputer.</p></div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

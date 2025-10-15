@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan & Kuis | Belajar Arsitektur Komputer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Titillium+Web:wght@600;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+       <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="nav-brand">Arsitektur Komputer</a>
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html">Home</a>
+                    <a href="sejarah.html">Sejarah</a>
+                    <a href="mikroprosesor.html">Mikroprosesor</a>
+                    <a href="arsitektur.html">Arsitektur</a>
+                    <a href="interkoneksi.html">Interkoneksi</a>
+                    <a href="modern.html">Modern</a>
+                    <a href="latihan.html" class="active">Latihan & Kuis</a>
+                </div>
+                <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container content-wrapper">
+            <article class="content-section">
+                <h2>✍️ Uji Pemahaman Anda</h2>
+                <p>Uji pemahaman Anda tentang semua konsep yang telah kita pelajari dengan kuis komprehensif dan latihan interaktif di bawah ini.</p>
+            </article>
+
+            <article class="content-section">
+                <h2>Kuis Pilihan Ganda Komprehensif (15 Soal)</h2>
+                <form id="quiz-form">
+
+                    <h3>Bagian 1: Sejarah & Konsep Dasar</h3>
+
+                    <div class="quiz-question">
+                        <p>1. Siapa yang diakui sebagai programmer pertama di dunia berkat karyanya pada Analytical Engine?</p>
+                        <label><input type="radio" name="q1" value="a"> Charles Babbage</label>
+                        <label><input type="radio" name="q1" value="b"> Ada Lovelace</label>
+                        <label><input type="radio" name="q1" value="c"> John von Neumann</label>
+                        <div class="explanation" id="explanation-q1"><p><strong>Penjelasan:</strong> Ada Lovelace menulis algoritma pertama untuk Analytical Engine, menjadikannya programmer pertama.</p></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>2. Apa kelemahan utama dari komputer ENIAC yang diatasi oleh arsitektur Von Neumann?</p>
+                        <label><input type="radio" name="q2" value="a"> Terlalu lambat</label>
+                        <label><input type="radio" name="q2" value="b"> Harus diprogram ulang dengan menyambung kabel secara fisik</label>
+                        <label><input type="radio" name="q2" value="c"> Menggunakan terlalu banyak tabung vakum</label>
+                         <div class="explanation" id="explanation-q2"><p><strong>Penjelasan:</strong> Konsep "stored-program" Von Neumann memungkinkan program disimpan di memori, menghilangkan kebutuhan untuk mengubah kabel fisik seperti pada ENIAC.</p></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>3. Prediksi Gordon Moore yang terkenal, "Hukum Moore", menyatakan bahwa...</p>
+                        <label><input type="radio" name="q3" value="a"> Kecepatan clock prosesor akan berlipat ganda setiap 2 tahun.</label>
+                        <label><input type="radio" name="q3" value="b"> Jumlah transistor pada sebuah chip akan berlipat ganda setiap 18-24 bulan.</label>
+                        <label><input type="radio" name="q3" value="c"> Harga memori akan turun setengahnya setiap tahun.</label>
+                         <div class="explanation" id="explanation-q3"><p><strong>Penjelasan:</strong> Hukum Moore secara spesifik memprediksi pertumbuhan eksponensial dari kepadatan transistor pada sirkuit terpadu.</p></div>
+                    </div>
+
+                    <h3>Bagian 2: Arsitektur & Skenario</h3>
+
+                    <div class="quiz-question">
+                        <p>4. Anda sedang merancang sebuah *smartwatch* hemat daya. Arsitektur prosesor mana yang paling ideal?</p>
+                        <label><input type="radio" name="q4" value="a"> CISC (seperti Intel x86)</label>
+                        <label><input type="radio" name="q4" value="b"> RISC (seperti ARM)</label>
+                        <label><input type="radio" name="q4" value="c"> EPIC (seperti Intel Itanium)</label>
+                        <div class="explanation" id="explanation-q4"><p><strong>Penjelasan:</strong> Arsitektur RISC (seperti ARM) didesain untuk efisiensi daya, membuatnya dominan di perangkat mobile dan wearable.</p></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>5. Sebuah GPU dapat mengubah kecerahan ribuan piksel secara bersamaan dengan satu perintah. Kemampuan ini adalah contoh sempurna dari...</p>
+                        <label><input type="radio" name="q5" value="a"> MIMD</label>
+                        <label><input type="radio" name="q5" value="b"> CISC</label>
+                        <label><input type="radio" name="q5" value="c"> SIMD</label>
+                        <div class="explanation" id="explanation-q5"><p><strong>Penjelasan:</strong> SIMD (Single Instruction, Multiple Data) adalah prinsip di mana satu instruksi dieksekusi pada banyak data secara bersamaan, inti dari cara kerja GPU.</p></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>6. Sebuah perusahaan ingin membuat chip khusus untuk menambang Bitcoin seefisien mungkin. Arsitektur mana yang paling cocok?</p>
+                        <label><input type="radio" name="q6" value="a"> FPGA</label>
+                        <label><input type="radio" name="q6" value="b"> ASIC</label>
+                        <label><input type="radio" name="q6" value="c"> GPU</label>
+                        <div class="explanation" id="explanation-q6"><p><strong>Penjelasan:</strong> ASIC (Application-Specific Integrated Circuit) adalah chip yang dirancang permanen untuk satu tugas, memberikan efisiensi maksimal untuk tugas tersebut.</p></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>7. Pergeseran dari prosesor single-core ke multi-core adalah respons industri terhadap masalah fundamental apa?</p>
+                        <label><input type="radio" name="q7" value="a"> Keterbatasan kecepatan memori (Memory Wall)</label>
+                        <label><input type="radio" name="q7" value="b"> Keterbatasan panas dan daya (Power Wall)</label>
+                        <label><input type="radio" name="q7" value="c"> Keterbatasan set instruksi (Instruction Wall)</label>
+                        <div class="explanation" id="explanation-q7"><p><strong>Penjelasan:</strong> "Power Wall" adalah titik di mana meningkatkan kecepatan clock menghasilkan panas yang tidak dapat dikelola, memaksa industri beralih ke multi-core.</p></div>
+                    </div>
+
+                    <h3>Bagian 3: Interkoneksi & Periferal</h3>
+
+                    <div class="quiz-question">
+                        <p>8. Mengapa NVMe SSD modern bisa jauh lebih cepat daripada SSD SATA?</p>
+                        <label><input type="radio" name="q8" value="a"> Karena terhubung melalui System Bus bersama</label>
+                        <label><input type="radio" name="q8" value="b"> Karena terhubung melalui jalur Point-to-Point PCIe</label>
+                        <label><input type="radio" name="q8" value="c"> Karena menggunakan arsitektur Harvard</label>
+                        <div class="explanation" id="explanation-q8"><p><strong>Penjelasan:</strong> NVMe SSD menggunakan jalur PCIe yang menyediakan koneksi langsung berkecepatan tinggi ke CPU, tidak seperti SATA yang lebih lambat.</p></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>9. Untuk memasang kartu grafis (GPU) modern berperforma tinggi, slot manakah pada motherboard yang harus Anda gunakan?</p>
+                        <label><input type="radio" name="q9" value="a"> PCIe x1</label>
+                        <label><input type="radio" name="q9" value="b"> PCIe x16</label>
+                        <label><input type="radio" name="q9" value="c"> PCI (model lama)</label>
+                         <div class="explanation" id="explanation-q9"><p><strong>Penjelasan:</strong> Slot PCIe x16 menyediakan jumlah lane (jalur) terbanyak, memberikan bandwidth maksimal yang dibutuhkan oleh GPU modern.</p></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>10. Teknologi interkoneksi masa depan yang memungkinkan CPU dan akselerator (seperti GPU) untuk berbagi memori secara koheren adalah...</p>
+                        <label><input type="radio" name="q10" value="a"> CXL (Compute Express Link)</label>
+                        <label><input type="radio" name="q10" value="b"> QPI (QuickPath Interconnect)</label>
+                        <label><input type="radio" name="q10" value="c"> HyperTransport</label>
+                         <div class="explanation" id="explanation-q10"><p><strong>Penjelasan:</strong> CXL adalah standar baru yang dibangun di atas PCIe untuk memungkinkan pembagian memori (memory pooling) di data center modern.</p></div>
+                    </div>
+
+                    <h3>Bagian 4: Perhitungan Cache</h3>
+
+                    <div class="quiz-question">
+                        <p>11. Sebuah sistem memiliki alamat memori <strong>16-bit</strong>, cache Direct Mapping <strong>64 line</strong>, dan ukuran blok <strong>16 byte</strong>. Manakah format alamat yang benar?</p>
+                        <label><input type="radio" name="q11" value="a"> Tag (6 bit), Line (6 bit), Word (4 bit)</label>
+                        <label><input type="radio" name="q11" value="b"> Tag (4 bit), Line (6 bit), Word (6 bit)</label>
+                        <label><input type="radio" name="q11" value="c"> Tag (4 bit), Line (8 bit), Word (4 bit)</label>
+                        <div class="explanation" id="explanation-q11"><p><strong>Penjelasan:</strong> Word = log₂(16) = 4 bit. Line = log₂(64) = 6 bit. Tag = 16 - 6 - 4 = <strong>6 bit</strong>. Jadi formatnya adalah Tag (6), Line (6), Word (4).</p></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>12. Sebuah cache memiliki format alamat: Tag (10 bit), Set (14 bit), Word (6 bit). Jika cache ini adalah <strong>2-way set associative</strong>, berapa kapasitas totalnya?</p>
+                        <label><input type="radio" name="q12" value="a"> 1 MB</label>
+                        <label><input type="radio" name="q12" value="b"> 2 MB</label>
+                        <label><input type="radio" name="q12" value="c"> 4 MB</label>
+                        <div class="explanation" id="explanation-q12"><p><strong>Penjelasan:</strong> Kapasitas = (Jumlah Line) × (Ukuran Blok). Jumlah Line = (2¹⁴ Set) × (2-way) = 2¹⁵. Ukuran Blok = 2⁶ byte. Kapasitas = 2¹⁵ × 2⁶ = 2²¹ byte = <strong>2 MB</strong>.</p></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>13. Prosesor dengan alamat <strong>32-bit</strong> memiliki cache direct-mapped. Format alamatnya adalah Tag(18), Line(8), Word(6). Berapa kapasitas cache tersebut?</p>
+                        <label><input type="radio" name="q13" value="a"> 8 KB</label>
+                        <label><input type="radio" name="q13" value="b"> 16 KB</label>
+                        <label><input type="radio" name="q13" value="c"> 32 KB</label>
+                        <div class="explanation" id="explanation-q13"><p><strong>Penjelasan:</strong> Kapasitas = 2<sup>(Bit Line)</sup> × 2<sup>(Bit Word)</sup> = 2⁸ × 2⁶ = 2¹⁴ byte = <strong>16 KB</strong>.</p></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>14. Cache L1 sebuah CPU seringkali menggunakan arsitektur Harvard termodifikasi. Apa artinya ini?</p>
+                        <label><input type="radio" name="q14" value="a"> Memiliki satu cache besar untuk semua data.</label>
+                        <label><input type="radio" name="q14" value="b"> Memiliki cache terpisah untuk instruksi (I-Cache) dan data (D-Cache).</label>
+                        <label><input type="radio" name="q14" value="c"> Semua data harus melewati RAM terlebih dahulu.</label>
+                        <div class="explanation" id="explanation-q14"><p><strong>Penjelasan:</strong> Ini memungkinkan CPU untuk mengambil instruksi dan data secara bersamaan dari cache L1, meningkatkan kinerja.</p></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>15. Inovasi prosesor Intel 80386 yang menjadi fondasi sistem operasi modern adalah...</p>
+                        <label><input type="radio" name="q15" value="a"> Arsitektur 16-bit</label>
+                        <label><input type="radio" name="q15" value="b"> Pipelining</label>
+                        <label><input type="radio" name="q15" value="c"> Arsitektur 32-bit dan Paged Virtual Memory</label>
+                        <div class="explanation" id="explanation-q15"><p><strong>Penjelasan:</strong> Kemampuan 32-bit dan manajemen memori virtual pada 80386 memungkinkan multitasking dan memori terproteksi.</p></div>
+                    </div>
+
+                    <button type="submit" class="quiz-submit-btn">Cek Jawaban</button>
+                </form>
+                <div id="quiz-results"></div>
+            </article>
+
+            <article class="content-section">
+                <h2>Latihan Interaktif (Dengan Pembahasan Detail)</h2>
+                <div class="latihan-item">
+                    <p><strong>Soal 1:</strong> Sebuah prosesor dengan alamat <strong>32-bit</strong> menggunakan cache L1 sebesar <strong>32 KB</strong>. Jika ukuran blok adalah <strong>64 byte</strong>, tentukan format alamatnya untuk Direct Mapping.</p>
+                    <button class="reveal-btn">Tampilkan Jawaban</button>
+                    <div class="answer">
+                        <p><strong>Pembahasan:</strong></p>
+                        <ol>
+                            <li><strong>Bit Word:</strong> Ukuran blok 64 byte = 2<sup>6</sup> &rarr; <strong>6 bit</strong>.</li>
+                            <li><strong>Jumlah Line:</strong> Kapasitas Cache / Ukuran Blok = 32 KB / 64 B = (2<sup>15</sup>) / (2<sup>6</sup>) = 2<sup>9</sup> = 512 line.</li>
+                            <li><strong>Bit Line:</strong> Jumlah line 512 = 2<sup>9</sup> &rarr; <strong>9 bit</strong>.</li>
+                            <li><strong>Bit Tag:</strong> 32 (total) - 9 (line) - 6 (word) = <strong>17 bit</strong>.</li>
+                        </ol>
+                        <div class="address-format"><span>Tag (17 bit)</span><span>Line (9 bit)</span><span>Word (6 bit)</span></div>
+                    </div>
+                </div>
+                 <div class="latihan-item">
+                    <p><strong>Soal 2:</strong> Menggunakan sistem dari Soal 1, di baris cache ke berapakah alamat memori <code>0x12345678</code> akan dipetakan?</p>
+                    <button class="reveal-btn">Tampilkan Jawaban</button>
+                    <div class="answer">
+                         <p><strong>Pembahasan:</strong></p>
+                        <ol>
+                            <li><strong>Format:</strong> Tag(17), Line(9), Word(6). Kita butuh 9 bit untuk Line.</li>
+                            <li><strong>Konversi ke Biner:</strong> <code>0x12345678</code>. Kita hanya perlu melihat bit yang relevan. Bit Word ada di 6 posisi terakhir, Bit Line ada di 9 posisi sebelumnya.</li>
+                            <li><strong>Identifikasi Bit Line:</strong> Alamat <code>...0101 0110 0111 1000</code>. 6 bit terakhir adalah Word (<code>111000</code>). 9 bit sebelumnya adalah Line: <code>101011001</code>.</li>
+                            <li><strong>Konversi ke Desimal:</strong> <code>101011001</code><sub>2</sub> = 256 + 64 + 16 + 8 + 1 = <strong>345</strong>.</li>
+                        </ol>
+                        <p>Jadi, alamat tersebut akan dipetakan ke <strong>baris ke-345</strong> di cache.</p>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+    <footer>
+        <div class="container"><p>&copy; 2025 Belajar Arsitektur Komputer.</p></div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

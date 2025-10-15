@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sejarah Awal | Belajar Arsitektur Komputer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Titillium+Web:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="nav-brand">Arsitektur Komputer</a>
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html">Home</a>
+                    <a href="sejarah.html">Sejarah</a>
+                    <a href="mikroprosesor.html">Mikroprosesor</a>
+                    <a href="arsitektur.html">Arsitektur</a>
+                    <a href="interkoneksi.html">Interkoneksi</a> <a href="modern.html">Modern</a>
+                    <a href="latihan.html">Latihan & Kuis</a>
+                </div>
+                <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container content-wrapper">
+
+            <article class="content-section">
+                <h2>🔬 Ilmu Fondasi: Logika Boolean</h2>
+                <p>Jauh sebelum sirkuit elektronik pertama dibuat, fondasi matematika untuk komputasi digital telah diletakkan. Pada tahun 1854, <strong>George Boole</strong> memperkenalkan sistem aljabar yang kini dikenal sebagai <strong>Logika Boolean</strong>. Sistem ini menyederhanakan ide-ide logika yang kompleks menjadi dua nilai sederhana: <strong>Benar (TRUE)</strong> atau <strong>Salah (FALSE)</strong>.</p>
+                <p>Pada tahun 1938, <strong>Claude Shannon</strong> dalam tesis magisternya yang legendaris menunjukkan bagaimana aljabar Boolean ini dapat diimplementasikan secara sempurna menggunakan sakelar elektronik. Dengan merepresentasikan TRUE sebagai <code>1</code> (sakelar ON) dan FALSE sebagai <code>0</code> (sakelar OFF), operasi logika seperti <strong>AND, OR,</strong> dan <strong>NOT</strong> dapat dibangun menjadi sirkuit fisik. Ini adalah jembatan krusial antara matematika abstrak dan desain sirkuit digital yang menjadi inti dari semua komputer modern.</p>
+            </article>
+
+            <article class="content-section">
+                <h2>⚙️ Generasi Nol: Era Mekanis & Elektromekanis</h2>
+                <p>Ide tentang mesin hitung otomatis sudah ada jauh sebelum era elektronik. <strong>Charles Babbage</strong>, seorang matematikawan Inggris, pada abad ke-19 merancang <strong>Analytical Engine</strong>, sebuah komputer mekanis serba guna yang memiliki elemen-elemen dasar seperti unit pemrosesan (disebut "mill") dan memori (disebut "store").</p>
+                <img src="img/analytical-engine.jpg" alt="Diagram Mesin Analitis Charles Babbage" class="content-image">
+                <div class="fun-fact-box">
+                    <h4>💡 Fakta Menarik: Programmer Pertama di Dunia</h4>
+                    <p><strong>Ada Lovelace</strong>, putri dari penyair Lord Byron, bekerja sama dengan Babbage. Ia menulis catatan rinci tentang Analytical Engine dan membuat algoritma pertama yang dimaksudkan untuk diproses oleh mesin. Karena karyanya ini, ia diakui sebagai programmer komputer pertama di dunia.</p>
+                </div>
+                <p>Pada akhir 1930-an, <strong>Konrad Zuse</strong> di Jerman membangun serangkaian komputer elektromekanis menggunakan relay. Mesinnya, <strong>Z3 (1941)</strong>, adalah komputer otomatis pertama yang dapat diprogram dan berfungsi penuh, membuktikan bahwa mesin komputasi yang kompleks dapat dibangun.</p>
+            </article>
+
+            <article class="content-section">
+                <h2>🔌 Generasi Pertama: Tabung Vakum & Arsitektur von Neumann</h2>
+                <p>Era komputer elektronik dimulai dengan mesin raksasa yang menggunakan ribuan tabung vakum sebagai sakelar. Salah satu yang paling terkenal adalah <strong>ENIAC (1946)</strong>, komputer elektronik serba guna pertama. Namun, ENIAC memiliki kelemahan besar: ia diprogram dengan cara menyambung ulang kabel secara manual, sebuah proses yang bisa memakan waktu berhari-hari.</p>
+                <img src="img/eniac.jpg" alt="Komputer ENIAC yang berukuran satu ruangan" class="content-image">
+                <p>Sebuah terobosan besar datang dari matematikawan <strong>John von Neumann</strong>, yang mengusulkan konsep <strong>stored-program</strong>. Ide cemerlang ini menyatakan bahwa instruksi (program) dapat disimpan di dalam memori komputer bersama dengan data. Komputer tidak lagi perlu diubah secara fisik untuk menjalankan program yang berbeda. Konsep ini diimplementasikan pada komputer seperti <strong>EDVAC</strong> dan <strong>IAS</strong>, yang menjadi prototipe fundamental untuk hampir semua komputer modern.</p>
+                <div class="fun-fact-box">
+                    <h4>💡 Fakta Menarik: Arti Asli "Komputer"</h4>
+                    <p>Sebelum mesin elektronik ada, kata "komputer" merujuk pada sebuah profesi. "Komputer" adalah orang (biasanya wanita) yang pekerjaannya adalah melakukan perhitungan matematis yang panjang dan berulang-ulang dengan tangan, misalnya untuk tabel balistik militer atau data astronomi.</p>
+                </div>
+            </article>
+
+            <article class="content-section">
+                <h2>💡 Generasi Kedua: Revolusi Transistor & Sirkuit Terpadu</h2>
+                <p>Penemuan <strong>transistor</strong> di Bell Labs pada tahun 1947 oleh <strong>John Bardeen, Walter Brattain, dan William Shockley</strong> mengubah segalanya. Sebagai perangkat <em>solid-state</em> berbahan silikon, transistor jauh lebih kecil, lebih cepat, lebih dingin, dan lebih murah untuk diproduksi secara massal daripada tabung vakum.</p>
+                <img src="img/transistor.jpg" alt="Transistor point-contact pertama di Bell Labs" class="content-image">
+                <p>Inovasi berikutnya adalah <strong>sirkuit terpadu (IC)</strong> pada akhir 1950-an, yang dikembangkan oleh <strong>Jack Kilby</strong> dan <strong>Robert Noyce</strong>. IC mengintegrasikan banyak transistor ke dalam satu keping silikon (chip). Perkembangan ini melahirkan <strong>Hukum Moore</strong> pada tahun 1965, yang memprediksi penggandaan jumlah transistor pada sebuah chip setiap 18-24 bulan.</p>
+                <div class="fun-fact-box">
+                    <h4>💡 Fakta Menarik: Lahirnya "Silicon Valley"</h4>
+                    <p>Robert Noyce dan tujuh insinyur lainnya (dijuluki "Traitorous Eight" atau "Delapan Pengkhianat") meninggalkan perusahaan William Shockley karena perbedaan visi. Mereka kemudian mendirikan <strong>Fairchild Semiconductor</strong>, perusahaan yang menjadi cikal bakal banyak perusahaan teknologi lainnya. Keberhasilan Fairchild dan perusahaan-perusahaan turunannya di area Santa Clara, California, menjadi alasan mengapa wilayah tersebut kini dikenal sebagai <strong>"Silicon Valley"</strong>, merujuk pada bahan dasar pembuatan chip.</p>
+                </div>
+            </article>
+        </div>
+    </main>
+    <footer>
+        <div class="container"><p>&copy; 2025 Belajar Arsitektur Komputer.</p></div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

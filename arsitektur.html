@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jenis Arsitektur | Belajar Arsitektur Komputer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Titillium+Web:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="nav-brand">Arsitektur Komputer</a>
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html">Home</a>
+                    <a href="sejarah.html">Sejarah</a>
+                    <a href="mikroprosesor.html">Mikroprosesor</a>
+                    <a href="arsitektur.html">Arsitektur</a>
+                    <a href="interkoneksi.html">Interkoneksi</a> <a href="modern.html">Modern</a>
+                    <a href="latihan.html">Latihan & Kuis</a>
+                </div>
+                <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container content-wrapper">
+            <article class="content-section">
+                <h2>🏛️ Jenis-Jenis Arsitektur Komputer</h2>
+                <p>Arsitektur komputer mendefinisikan "cetak biru" operasional dari sebuah sistem komputasi. Setiap arsitektur dirancang dengan filosofi yang berbeda untuk mencapai tujuan tertentu, baik itu fleksibilitas, kecepatan, efisiensi daya, atau spesialisasi tugas.</p>
+
+                <div class="sub-section">
+                    <h3>1. Arsitektur Von Neumann</h3>
+                    <p><strong>Konsep Dasar:</strong> Arsitektur paling klasik yang menggunakan <strong>satu ruang memori tunggal</strong> untuk menyimpan instruksi (program) dan data. Keduanya diakses melalui jalur (bus) yang sama.</p>
+                    <p><strong>Analogi:</strong> Bayangkan seorang koki yang memiliki satu buku catatan. Resep masakan (instruksi) dan daftar bahan (data) ditulis di buku yang sama. Sang koki harus bolak-balik membaca resep dan daftar bahan di halaman yang berbeda, yang terkadang memperlambat proses memasak.</p>
+                    <ul>
+                        <li><strong>Fungsi Utama:</strong> Komputasi serba guna (general-purpose). Desainnya yang sederhana dan fleksibel membuatnya ideal untuk berbagai macam tugas.</li>
+                        <li><strong>Relevansi Saat Ini:</strong> Sangat relevan. Mayoritas PC, laptop, dan server di dunia saat ini pada dasarnya masih menggunakan model Von Neumann. Kelemahannya ("Von Neumann bottleneck") diatasi dengan sistem cache yang canggih.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-section">
+                    <h3>2. Arsitektur Harvard</h3>
+                    <p><strong>Konsep Dasar:</strong> Menggunakan <strong>dua ruang memori terpisah</strong> secara fisik: satu khusus untuk instruksi dan satu lagi khusus untuk data. Masing-masing memori memiliki bus sendiri.</p>
+                    <p><strong>Analogi:</strong> Koki yang sama kini memiliki dua buku: satu buku resep (instruksi) dan satu buku stok bahan (data). Ia bisa membaca langkah resep berikutnya sambil tangannya mengambil bahan dari buku stok secara bersamaan, membuat prosesnya lebih efisien.</p>
+                    <ul>
+                        <li><strong>Fungsi Utama:</strong> Sistem yang memerlukan throughput instruksi yang tinggi dan deterministik, seperti pada sistem tertanam (<em>embedded systems</em>) dan Digital Signal Processors (DSPs).</li>
+                        <li><strong>Relevansi Saat Ini:</strong> Sangat relevan. Arsitektur ini adalah standar di dunia mikrokontroler (Arduino, ESP32, ECU mobil). Bahkan, CPU modern secara internal mengadopsi <strong>arsitektur Harvard termodifikasi</strong> pada level cache (L1 instruction cache dan L1 data cache terpisah) untuk mendapatkan kecepatan, meskipun dari luar tampak seperti Von Neumann.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-section">
+                    <h3>3. CISC (Complex Instruction Set Computer)</h3>
+                    <p><strong>Konsep Dasar:</strong> Filosofi desain yang menekankan pada kemampuan hardware. CISC memiliki set instruksi yang besar dan kompleks, di mana satu instruksi dapat melakukan banyak operasi tingkat rendah sekaligus.</p>
+                    <p><strong>Analogi:</strong> Sebuah tombol "Buat Kopi" pada mesin kopi canggih. Satu tekanan tombol (satu instruksi) akan menjalankan serangkaian proses: menggiling biji, memanaskan air, menyeduh, dan menuang ke cangkir.</p>
+                    <ul>
+                        <li><strong>Fungsi Utama:</strong> Memudahkan pekerjaan programmer assembly di masa lalu dan mengurangi ukuran program karena satu instruksi bisa mewakili banyak pekerjaan.</li>
+                        <li><strong>Relevansi Saat Ini:</strong> Sangat relevan. Prosesor <strong>Intel x86</strong> dan <strong>AMD64</strong> yang mendominasi pasar PC adalah CISC. Namun, secara internal, prosesor CISC modern menerjemahkan instruksi kompleks ini menjadi operasi-operasi sederhana mirip RISC (<em>micro-ops</em>) sebelum dieksekusi, sehingga mendapatkan keunggulan dari kedua dunia.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-section">
+                    <h3>4. RISC (Reduced Instruction Set Computer)</h3>
+                    <p><strong>Konsep Dasar:</strong> Filosofi desain yang berlawanan dengan CISC. RISC menggunakan set instruksi yang kecil, sederhana, dan seragam. Setiap instruksi dirancang untuk dieksekusi dengan sangat cepat, biasanya dalam satu siklus clock.</p>
+                    <p><strong>Analogi:</strong> Membuat kopi secara manual. Anda memiliki alat-alat sederhana: penggiling, pemanas air, filter (instruksi sederhana). Anda harus melakukan setiap langkah satu per satu, tetapi setiap langkah sangat cepat dan efisien. Kecepatan total didapat dari efisiensi setiap langkah kecil.</p>
+                    <ul>
+                        <li><strong>Fungsi Utama:</strong> Mencapai kinerja tinggi melalui kesederhanaan hardware, yang juga menghasilkan konsumsi daya yang lebih rendah. Beban dialihkan ke <em>compiler</em> untuk mengoptimalkan urutan instruksi sederhana.</li>
+                        <li><strong>Relevansi Saat Ini:</strong> Sangat relevan dan terus berkembang. Arsitektur <strong>ARM</strong> yang berbasis RISC mendominasi pasar perangkat mobile (smartphone, tablet). <strong>Apple M-series</strong> pada Mac juga berbasis ARM. Arsitektur open-source <strong>RISC-V</strong> juga semakin populer untuk perangkat IoT dan chip kustom.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-section">
+                    <h3>5. Arsitektur Multicore</h3>
+                    <p><strong>Konsep Dasar:</strong> Mengintegrasikan dua atau lebih unit pemrosesan independen (core) ke dalam satu chip. Ini adalah respons terhadap "Tembok Daya" yang membatasi peningkatan kecepatan clock.</p>
+                    <p><strong>Analogi:</strong> Sebuah restoran yang awalnya hanya punya satu koki super cepat. Untuk meningkatkan jumlah pesanan yang bisa dibuat, pemiliknya tidak mencoba membuat koki itu bergerak lebih cepat lagi (karena akan kelelahan/terbakar), melainkan mempekerjakan empat koki dengan kecepatan normal yang bekerja secara paralel di dapur yang sama.</p>
+                    <ul>
+                        <li><strong>Fungsi Utama:</strong> Meningkatkan kinerja secara keseluruhan (<em>throughput</em>) dengan menjalankan banyak tugas atau bagian dari satu tugas secara bersamaan (paralelisme).</li>
+                        <li><strong>Relevansi Saat Ini:</strong> Standar absolut. Hampir tidak ada prosesor modern untuk PC, laptop, atau smartphone yang masih <em>single-core</em>. Contohnya seri <strong>Intel Core i9</strong> dan <strong>AMD Ryzen 9</strong>.</li>
+                    </ul>
+                </div>
+
+                 <div class="sub-section">
+                    <h3>6. SIMD & 7. MIMD</h3>
+                    <ul>
+                        <li><p><strong>SIMD (Single Instruction, Multiple Data):</strong> Satu instruksi dieksekusi pada banyak data secara serentak. <strong>Analogi:</strong> Seorang instruktur senam meneriakkan "lompat!" (satu instruksi), dan seluruh kelas yang berisi 50 orang (banyak data) melompat pada saat yang sama. <strong>Fungsi:</strong> Sangat efisien untuk tugas repetitif pada data besar seperti pemrosesan gambar/video. <strong>Relevansi:</strong> Fundamental pada CPU modern (via ekstensi <strong>SSE</strong> dan <strong>AVX</strong>) dan terutama pada arsitektur dasar <strong>GPU</strong>.</p></li>
+                        <li><p><strong>MIMD (Multiple Instruction, Multiple Data):</strong> Beberapa instruksi yang berbeda dieksekusi pada data yang berbeda secara serentak. <strong>Analogi:</strong> Sebuah kantor yang sibuk. Setiap karyawan (core) mengerjakan tugasnya sendiri (instruksi berbeda) dengan dokumennya sendiri (data berbeda). <strong>Fungsi:</strong> Komputasi paralel yang paling fleksibel dan kuat. <strong>Relevansi:</strong> Arsitektur multicore pada dasarnya adalah implementasi dari MIMD.</p></li>
+                    </ul>
+                </div>
+
+                <div class="sub-section">
+                    <h3>8. ASIC & 9. FPGA</h3>
+                     <ul>
+                        <li><p><strong>ASIC (Application-Specific Integrated Circuit):</strong> Chip yang didesain secara permanen untuk satu tugas yang sangat spesifik. <strong>Analogi:</strong> Kunci yang dibuat khusus untuk satu gembok. Sangat efisien untuk gembok itu, tapi tidak bisa digunakan untuk yang lain. <strong>Fungsi:</strong> Digunakan saat kecepatan dan efisiensi daya untuk satu fungsi adalah segalanya. <strong>Relevansi:</strong> Sangat relevan. Ditemukan di perangkat penambang Bitcoin, chip enkoder video di kamera, dan modem 5G.</p></li>
+                        <li><p><strong>FPGA (Field-Programmable Gate Array):</strong> Chip yang sirkuit internalnya dapat diprogram ulang setelah diproduksi. <strong>Analogi:</strong> Papan sirkuit yang terbuat dari Lego. Anda bisa merakitnya menjadi radio hari ini, lalu membongkarnya dan merakitnya kembali menjadi kalkulator besok. <strong>Fungsi:</strong> Prototyping chip ASIC, akselerasi tugas di data center, dan sistem yang memerlukan pembaruan logika hardware di lapangan. <strong>Relevansi:</strong> Sangat penting di industri telekomunikasi, kedirgantaraan, dan komputasi performa tinggi.</p></li>
+                    </ul>
+                </div>
+
+                <div class="sub-section">
+                    <h3>10. Arsitektur Quantum & 11. EPIC</h3>
+                     <ul>
+                        <li><p><strong>EPIC (Explicitly Parallel Instruction Computing):</strong> Filosofi desain di mana compiler, bukan hardware, yang bertanggung jawab untuk mengidentifikasi dan mengelompokkan instruksi yang dapat dijalankan secara paralel. <strong>Relevansi:</strong> Contoh paling terkenal adalah arsitektur <strong>Intel Itanium</strong>. Namun, arsitektur ini sekarang sebagian besar bersifat historis dan tidak diadopsi secara luas.</p></li>
+                        <li><p><strong>Quantum Computing:</strong> Paradigma komputasi yang sama sekali berbeda, menggunakan prinsip mekanika kuantum. Unit dasarnya adalah <strong>qubit</strong> (bukan bit), yang dapat berada dalam keadaan 0, 1, atau keduanya secara bersamaan (superposisi). <strong>Relevansi:</strong> Dianggap sebagai masa depan untuk memecahkan masalah yang mustahil bagi komputer klasik (misalnya, penemuan obat, simulasi molekuler). Masih dalam tahap penelitian dan pengembangan intensif.</p></li>
+                    </ul>
+                </div>
+
+            </article>
+        </div>
+    </main>
+    <footer>
+        <div class="container"><p>&copy; 2025 Belajar Arsitektur Komputer.</p></div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolusi Interkoneksi | Belajar Arsitektur Komputer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Titillium+Web:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="nav-brand">Arsitektur Komputer</a>
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html">Home</a>
+                    <a href="sejarah.html">Sejarah</a>
+                    <a href="mikroprosesor.html">Mikroprosesor</a>
+                    <a href="arsitektur.html">Arsitektur</a>
+                    <a href="interkoneksi.html" class="active">Interkoneksi</a> <a href="modern.html">Modern</a>
+                    <a href="latihan.html">Latihan & Kuis</a>
+                </div>
+                <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container content-wrapper">
+            <article class="content-section">
+                <h2>⚡ Evolusi Interkoneksi: Dari Jalan Raya Macet ke Jalan Tol Pribadi</h2>
+                <p>Interkoneksi adalah "sistem peredaran darah" dari sebuah komputer, jalur yang memungkinkan data mengalir antar komponen vital seperti CPU, memori, dan perangkat I/O. Evolusinya adalah kunci dari performa sistem modern.</p>
+
+                <div class="sub-section">
+                    <h3>Bus Tradisional → Point-to-Point</h3>
+                    <p>Di masa lalu, komputer mengandalkan <strong>System Bus</strong>, sebuah jalur komunikasi tunggal yang dipakai bersama oleh semua komponen. Bayangkan ini seperti jalan raya satu lajur di tengah kota yang digunakan oleh mobil, motor, dan truk sekaligus. Saat lalu lintas padat, semua akan melambat karena harus antri dan berebut jalan. Inilah kelemahan utama bus: menjadi *bottleneck*.</p>
+                    <p>Arsitektur modern beralih ke interkoneksi <strong>Point-to-Point (P2P)</strong>. Ini seperti membangun jaringan jalan tol pribadi yang menghubungkan langsung antar komponen penting. CPU punya jalan tol sendiri ke CPU lain, dan jalan tol lain ke pusat I/O. Hasilnya adalah latensi rendah, bandwidth tinggi, dan skalabilitas yang jauh lebih baik.</p>
+
+                </div>
+
+                <div class="sub-section">
+                    <h3>QPI (QuickPath Interconnect)</h3>
+                    <p>QPI adalah implementasi P2P dari Intel untuk menggantikan Front-Side Bus (FSB) yang sudah usang. Fungsinya adalah sebagai interkoneksi berkecepatan sangat tinggi antara CPU dengan CPU lain (dalam sistem multi-soket) dan antara CPU dengan I/O hub.</p>
+                    <h4>Arsitektur Berlapis (Layered Architecture)</h4>
+                    <p>Seperti protokol jaringan, QPI memiliki beberapa lapisan:</p>
+                    <ol>
+                        <li><strong>Physical Layer:</strong> Lapisan terbawah yang menangani pensinyalan listrik aktual melalui 20 jalur data.</li>
+                        <li><strong>Link Layer:</strong> Bertanggung jawab untuk transfer data yang andal, termasuk deteksi dan perbaikan error.</li>
+                        <li><strong>Routing Layer:</strong> Menentukan rute atau jalur yang harus diambil data untuk mencapai tujuannya dalam topologi sistem.</li>
+                        <li><strong>Protocol Layer:</strong> Lapisan tertinggi yang mendefinisikan "bahasa" atau format paket untuk menjaga koherensi cache antar prosesor.</li>
+                    </ol>
+                </div>
+
+                <div class="sub-section">
+                    <h3>PCI & PCIe (Koneksi Periferal)</h3>
+                    <p><strong>PCI (Peripheral Component Interconnect)</strong> adalah bus paralel lawas yang digunakan untuk menghubungkan kartu suara, kartu jaringan, dan periferal lainnya. Seperti system bus, PCI berbagi bandwidth, sehingga semua perangkat yang terhubung harus bersaing.</p>
+                    <p><strong>PCI Express (PCIe)</strong> adalah standar modern yang menggantikannya. PCIe adalah interkoneksi serial P2P, bukan bus. Konsep utamanya adalah **Lanes** (jalur). Sebuah koneksi PCIe dapat terdiri dari x1, x2, x4, x8, atau x16 lane. Semakin banyak lane, semakin besar bandwidth-nya, seperti jalan tol dengan lebih banyak lajur.</p>
+
+                </div>
+
+                <div class="sub-section">
+                    <h3>Detail Lapisan PCIe</h3>
+                    <p>PCIe juga memiliki arsitektur berlapis untuk mengelola komunikasi yang kompleks:</p>
+                    <ul>
+                        <li><strong>Transaction Layer:</strong> Bertindak sebagai "otak", lapisan ini membuat dan menerima paket permintaan (Request) dan penyelesaian (Completion). Misalnya, "baca data dari alamat X" atau "tulis data ini ke alamat Y".</li>
+                        <li><strong>Data Link Layer:</strong> Bertindak sebagai "penjaga kualitas", lapisan ini memastikan integritas data yang dikirim antar perangkat. Ia menambahkan nomor urut dan kode pengecekan error (CRC) ke setiap paket.</li>
+                        <li><strong>Physical Layer:</strong> Bertindak sebagai "kurir", lapisan ini bertanggung jawab untuk pengkodean dan transmisi sinyal data serial secara fisik melalui lane.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-section">
+                    <h3>Implementasi Nyata PCIe</h3>
+                    <p>Kecepatan dan fleksibilitas PCIe membuatnya menjadi tulang punggung untuk semua periferal berkinerja tinggi:</p>
+                    <ul>
+                        <li><strong>GPU (Kartu Grafis):</strong> Selalu menggunakan slot <strong>PCIe x16</strong> untuk mendapatkan bandwidth maksimal yang dibutuhkan untuk gaming, rendering 3D, dan komputasi AI.</li>
+                        <li><strong>NVMe SSD:</strong> Menggunakan jalur <strong>PCIe x4</strong> yang terhubung langsung ke CPU, memberikan kecepatan baca/tulis yang berkali-kali lipat lebih cepat daripada SSD SATA tradisional.</li>
+                        <li><strong>Kartu Jaringan (NIC):</strong> Kartu jaringan server berkecepatan tinggi (10GbE, 40GbE, 100GbE) menggunakan slot <strong>PCIe x4 atau x8</strong> untuk menangani lalu lintas data yang masif.</li>
+                    </ul>
+                </div>
+
+                 <div class="sub-section">
+                    <h3>Tren & Teknologi Masa Depan</h3>
+                    <p>Perlombaan kecepatan interkoneksi terus berlanjut:</p>
+                    <ul>
+                        <li><strong>Generasi PCIe Baru:</strong> Bandwidth PCIe berlipat ganda kira-kira setiap tiga tahun. Kita telah beralih dari PCIe 3.0, ke 4.0, 5.0, dan sekarang standar <strong>PCIe 6.0</strong> telah dirilis, menggunakan pensinyalan canggih (PAM4) untuk kembali melipatgandakan kecepatan.</li>
+                        <li><strong>CXL (Compute Express Link):</strong> Ini adalah standar terbuka baru yang dibangun di atas lapisan fisik PCIe. Tujuan utamanya adalah untuk menciptakan koneksi latensi rendah yang memungkinkan CPU, GPU, dan akselerator lainnya untuk berbagi memori secara koheren. CXL sangat penting untuk masa depan data center dan AI, di mana kumpulan memori yang besar dan dapat diakses bersama sangat dibutuhkan.</li>
+                        <li><strong>Interkoneksi Optik:</strong> Di masa depan yang lebih jauh, para peneliti sedang mengembangkan cara untuk menggunakan cahaya (foton) sebagai pengganti listrik untuk interkoneksi di dalam dan antar chip. Ini menjanjikan lompatan besar dalam hal bandwidth dan efisiensi energi.</li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </main>
+    <footer>
+        <div class="container"><p>&copy; 2025 Belajar Arsitektur Komputer.</p></div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
